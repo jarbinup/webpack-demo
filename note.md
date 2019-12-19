@@ -113,5 +113,8 @@ html-withimg-loader 解决 html 中的图片
 更常见的场景是，当图片文件小于多少 K 的时候，使用 url-loader 把文件直接转换成 base64, 超过则使用 file-loader 文件直出  
 
 
+1219-配置篇
+
+
 ## 问题
 1. loader 和 plugin 有什么区别
