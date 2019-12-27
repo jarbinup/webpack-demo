@@ -113,8 +113,44 @@ html-withimg-loader 解决 html 中的图片
 更常见的场景是，当图片文件小于多少 K 的时候，使用 url-loader 把文件直接转换成 base64, 超过则使用 file-loader 文件直出  
 
 
-1219-配置篇
+1220-配置篇
+多应用：
+a. entry 配置成多入口文件
+b. output 时 filename 用 [name]
+c. plugins 时 HtmlWebpackPlugin 配置 chunks
 
+sourceMap
+devtool: 'source-map' 会打包生成 index.js.map 会标示当前报错的行和列打包生成的 map 文件大而全
+
+
+import 在生产环境 默认会移除没用的代码
+举例： import 一个对象，代码中只使用了一个方法，此时在生产环境 production 中只会打包使用到的方法，开发模式下 development 这个对象重的方法都会打包出去
+tree-shaking 没用到的代码 自动删除掉，只有 import 语法可以。
+es6 的语法默认导出 
+export default {
+    sum,
+    minus
+}
+此时
+
+let calc = require('./index');
+calc.sum 会报错
+calc.default.sum 正常，导出的对象在默认对象上
+
+es6 会把结果放到 default 模块上，require 语法不支持 tree-sharking, 
+scope hosting 作用域提升 webpack 中可以省略简化代码
+
+抽离公共代码 common vendor 
+splitChunks 属性 
+webpack 4 之前是 commonChunkPlugins
+
+路由懒加载 也是通过 import 的方式，返回一个 promise 
+
+热更新 不是刷新页面 而是只更新页面的部分
+刷新页面的叫 强制更新
+
+new webpack.NamedModulesPlugin() 打印更新的模块路径
+new webpack.HotModuleRepalcementPlugin() 热更新插件
 
 ## 问题
 1. loader 和 plugin 有什么区别

@@ -1,30 +1,25 @@
 Arguments: 
-  /Users/youniyouzan/.nvm/versions/node/v8.16.0/bin/node /usr/local/Cellar/yarn/1.16.0/libexec/bin/yarn.js add html-withimg-plugin -D
+  /Users/youniyouzan/.nvm/versions/node/v10.18.0/bin/node /usr/local/Cellar/yarn/1.16.0/libexec/bin/yarn.js add mini-css-extract-plugin -D
 
 PATH: 
-  /Users/youniyouzan/.nvm/versions/node/v8.16.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/youniyouzan/.nvm/versions/node/v8.16.0/bin
+  /Users/youniyouzan/.nvm/versions/node/v10.18.0/bin:/Users/youniyouzan/.nvm/versions/node/v8.16.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/youniyouzan/.nvm/versions/node/v8.16.0/bin
 
 Yarn version: 
   1.16.0
 
 Node version: 
-  8.16.0
+  10.18.0
 
 Platform: 
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/html-withimg-plugin: Not found
-      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:66091:18)
-      at Request.self.callback (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:129590:22)
-      at emitTwo (events.js:126:13)
-      at Request.emit (events.js:214:7)
-      at Request.<anonymous> (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:130562:10)
-      at emitOne (events.js:116:13)
-      at Request.emit (events.js:211:7)
-      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:130484:12)
-      at Object.onceWrapper (events.js:313:30)
-      at emitNone (events.js:111:20)
+  SyntaxError: /Users/youniyouzan/Desktop/yangyp/study/webpack-demo/package.json: Unexpected token } in JSON at position 780
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:304:30)
+      at /usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:315:13
 
 npm manifest: 
   {
@@ -41,6 +36,7 @@ npm manifest:
       "css-loader": "^3.3.0",
       "file-loader": "^5.0.2",
       "html-webpack-plugin": "^3.2.0",
+      "html-withimg-loader": "^0.1.16",
       "less": "^3.10.3",
       "less-loader": "^5.0.0",
       "optimize-css-assets-webpack-plugin": "^5.0.3",
@@ -53,9 +49,6 @@ npm manifest:
       "webpack-cli": "^3.3.10",
       "webpack-dev-server": "^3.9.0"
     },
-    "dependencies": {
-      "mini-css-extract-plugin": "^0.8.0"
-    }
   }
 
 yarn manifest: 
@@ -2400,6 +2393,14 @@ Lockfile:
       toposort "^1.0.0"
       util.promisify "1.0.0"
   
+  html-withimg-loader@^0.1.16:
+    version "0.1.16"
+    resolved "https://registry.yarnpkg.com/html-withimg-loader/-/html-withimg-loader-0.1.16.tgz#76ff5b0833b48e4aeca38582c08f8d0b293c834d"
+    integrity sha1-dv9bCDO0jkrso4WCwI+NCyk8g00=
+    dependencies:
+      loader-utils "^0.2.15"
+      path "^0.12.7"
+  
   htmlparser2@^3.3.0:
     version "3.10.1"
     resolved "https://registry.yarnpkg.com/htmlparser2/-/htmlparser2-3.10.1.tgz#bd679dc3f59897b6a34bb10749c855bb53a9392f"
@@ -3059,7 +3060,7 @@ Lockfile:
       emojis-list "^2.0.0"
       json5 "^1.0.1"
   
-  loader-utils@^0.2.16:
+  loader-utils@^0.2.15, loader-utils@^0.2.16:
     version "0.2.17"
     resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-0.2.17.tgz#f86e6374d43205a6e6c60e9196f17c0299bfb348"
     integrity sha1-+G5jdNQyBabmxg6RlvF8Apm/s0g=
@@ -3268,10 +3269,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
     integrity sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
   
-  mini-css-extract-plugin@^0.8.0:
-    version "0.8.0"
-    resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-0.8.0.tgz#81d41ec4fe58c713a96ad7c723cdb2d0bd4d70e1"
-    integrity sha512-MNpRGbNA52q6U92i0qbVpQNsgk7LExy41MdAlG84FeytfDOtRIf/mCHdEgG8rpTKOaNKiqUnZdlptF469hxqOw==
+  mini-css-extract-plugin@^0.8.2:
+    version "0.8.2"
+    resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-0.8.2.tgz#a875e169beb27c88af77dd962771c9eedc3da161"
+    integrity sha512-a3Y4of27Wz+mqK3qrcd3VhYz6cU0iW5x3Sgvqzbj+XmlrSizmvu8QQMl5oMYJjgHOC4iyt+w7l4umP+dQeW3bw==
     dependencies:
       loader-utils "^1.1.0"
       normalize-url "1.9.1"
@@ -3916,6 +3917,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
     integrity sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
   
+  path@^0.12.7:
+    version "0.12.7"
+    resolved "https://registry.yarnpkg.com/path/-/path-0.12.7.tgz#d4dc2a506c4ce2197eb481ebfcd5b36c0140b10f"
+    integrity sha1-1NwqUGxM4hl+tIHr/NWzbAFAsQ8=
+    dependencies:
+      process "^0.11.1"
+      util "^0.10.3"
+  
   pbkdf2@^3.0.3:
     version "3.0.17"
     resolved "https://registry.yarnpkg.com/pbkdf2/-/pbkdf2-3.0.17.tgz#976c206530617b14ebb32114239f7b09336e93a6"
@@ -4345,7 +4354,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
     integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
   
-  process@^0.11.10:
+  process@^0.11.1, process@^0.11.10:
     version "0.11.10"
     resolved "https://registry.yarnpkg.com/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
     integrity sha1-czIwDoQBYb2j5podHZGn1LwW8YI=
@@ -5560,6 +5569,13 @@ Lockfile:
     integrity sha1-evsa/lCAUkZInj23/g7TeTNqwPk=
     dependencies:
       inherits "2.0.1"
+  
+  util@^0.10.3:
+    version "0.10.4"
+    resolved "https://registry.yarnpkg.com/util/-/util-0.10.4.tgz#3aa0125bfe668a4672de58857d3ace27ecb76901"
+    integrity sha512-0Pm9hTQ3se5ll1XihRic3FDIku70C+iHUdT/W926rSgHV5QgXsYbKZN8MSC3tJtSkhuROzvsQjAaFENRXr+19A==
+    dependencies:
+      inherits "2.0.3"
   
   util@^0.11.0:
     version "0.11.1"
