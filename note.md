@@ -152,5 +152,36 @@ webpack 4 之前是 commonChunkPlugins
 new webpack.NamedModulesPlugin() 打印更新的模块路径
 new webpack.HotModuleRepalcementPlugin() 热更新插件
 
+
+webapck 核心 complier 是 tapable, 是一种事件机制，把各种 loader 和 plugin 串起来。tapbale 提供多种类型的钩子。包括同步、异步相关的钩子
+
+tap  同步注册
+tapAsync  异步注册
+tapPromise  注册 Promise
+
+调用的时候
+call callAsync promise
+
+串行分为 同步串行 和 异步串行
+
+package.json 中通过 bin 字段定义要执行什么命令
+
+{
+    "bin": {
+        "zf-pack": ./zf-pack.js
+    }
+}
+
+如何 link 直接到项目根目录下，运行 npm link 把当前的包 link 到全局
+然后在本地项目运行 `npm link 包名` 相当于把包安装到本项目 运行 `npx 报名` 直接在命令行看到当前包的运行结果
+
+__dirname 当前运行目录
+入口文件路径
+所有文件依赖
+
+process.cwd(); 运行的绝对路径
+
+loader-utils 中的 this 表示 loader 的 context 对象
+
 ## 问题
 1. loader 和 plugin 有什么区别

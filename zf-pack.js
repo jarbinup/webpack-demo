@@ -1,0 +1,1 @@
+#! /usr/bin/env node 告诉命令行使用 node 环境来执行当前文件
